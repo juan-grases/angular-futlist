@@ -1,9 +1,13 @@
 var express = require('express');
+var path = require('path');
 var app = express();
 
 
-app.get('*', function(req, res){
-	res.sendfile('./public/index.html');
+app.set('port', process.env.PORT || 3002);
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', function(req, res){
+	res.sendFile('./public/index.html');
 });
 
 app.listen(app.get('port'), function(){

@@ -4,7 +4,7 @@ controllers.controller('AppCtrl', function($scope){
 
 });
 
-controllers.controller('EstListCtrl', function($scope, $http){
+controllers.controller('SportCenterListCtrl', function($scope, $http){
 	$scope.list;
 
 	$http.get('http://localhost:3001/establecimientos.json').then(function (data){

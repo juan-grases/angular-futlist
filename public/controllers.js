@@ -4,10 +4,10 @@ controllers.controller('AppCtrl', function($scope){
 
 });
 
-controllers.controller('SportCenterListCtrl', function($scope, $http){
+controllers.controller('SportCenterListCtrl', function($scope, $http, futlistData){
 	$scope.list;
 
-	$http.get('http://localhost:3001/establecimientos.json').then(function (data){
+	futlistData.sportCenters().then(function (data){
 		$scope.list = data.data;
 		console.log(data);
 	});
